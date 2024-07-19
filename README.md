@@ -1,6 +1,6 @@
-# Project for Codecademy full-stack course
+# Project for Codecademy Full-Stack Engineer Career Path
 
-Rock, Paper, or Scissors
+
 Rock paper scissors is a classic two player game. Each player chooses either rock, paper, or scissors. The items are compared, and whichever player chooses the more powerful item wins.
 
 The possible outcomes are:
