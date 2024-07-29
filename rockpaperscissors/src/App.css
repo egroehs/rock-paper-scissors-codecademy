@@ -5,12 +5,28 @@
   align-items: center;
   min-height: 100vh;
   text-align: center;
+  background-color: #9FC9F3;
+}
+
+h1 {
+    color: #071952;
 }
 
 .buttons button {
   margin: 0 10px;
+  width: 70px;
+  height: 50px;
+  font-size: 25px;
+  border-radius: 50%;
+  border: none;
+  background-color: #9FC9F3;
+}
+
+p {
+    font-size: 25px;
 }
 
 .choices, .result {
   margin-top: 20px;
 }
+

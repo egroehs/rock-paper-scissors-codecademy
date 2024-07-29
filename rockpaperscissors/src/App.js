@@ -18,7 +18,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Rock, Paper, Scissors</h1>
+      <h1>Rock, Paper or Scissors?</h1>
       <div className="buttons">
         <button onClick={() => handleChoice("Rock")}>👊</button>
         <button onClick={() => handleChoice("Paper")}>✋</button>
@@ -26,7 +26,11 @@ function App() {
       </div>
 
       <div className="choices">
-        <p> {userChoice} 🆚 {computerChoice}</p>
+        <p>
+          {" "}
+          {userChoice}
+          {userChoice && <strong> VS</strong>} {computerChoice}
+        </p>
       </div>
       <div className="result">
         <p>{result}</p>
