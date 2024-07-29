@@ -1,35 +1,36 @@
 import React, { useState } from "react";
 import "./App.css";
-
+import getComputerChoice from "./components/getComputerChoice.js";
+import determineWinner from "./components/determineWinner.js";
 function App() {
-  const [userInput, setUserInput] = useState("");
-  const [displayChoice, setDisplayChoice] = useState("");
+  
+  const [userChoice, setUserChoice] = useState("");
+  const [computerChoice, setComputerChoice] = useState("");
+  const [result, setResult] = useState("");
 
-  const handleInputChange = (event) => {
-    setUserInput(event.target.value);
-  };
-
-  const handleSubmit = () => {
-    // Process the input and validate it
-    const validChoices = ["rock", "paper", "scissors", "bomb"];
-    if (validChoices.includes(userInput.toLowerCase())) {
-      setDisplayChoice(userInput);
-    } else {
-      setDisplayChoice("Invalid choice");
-    }
+  const handleChoice = (choice) => {
+    setUserChoice(choice);
+    const computerSelection = getComputerChoice();
+    setComputerChoice(computerSelection);
+    const gameResult = determineWinner(choice, computerSelection);
+    setResult(gameResult);
   };
 
   return (
     <div className="App">
       <h1>Rock, Paper, Scissors</h1>
-      <input
-        type="text"
-        value={userInput}
-        onChange={handleInputChange}
-        placeholder="Choose: rock, paper, or scissors..."
-      />
-      <button onClick={handleSubmit}>Submit</button>
-      <p>Choice: {displayChoice}</p>
+      <div className="buttons">
+        <button onClick={() => handleChoice("Rock")}>👊</button>
+        <button onClick={() => handleChoice("Paper")}>✋</button>
+        <button onClick={() => handleChoice("Scissors")}>✌️</button>
+      </div>
+
+      <div className="choices">
+        <p> {userChoice} 🆚 {computerChoice}</p>
+      </div>
+      <div className="result">
+        <p>{result}</p>
+      </div>
     </div>
   );
 }
